@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* Tema CodeSpace: fundal aproape negru, accent verde */
+:root {
+  --cs-accent: #42b883;
+  --cs-bg: #0a0a0a;
+  --cs-panel: #121212;
+  --cs-border: rgba(255, 255, 255, 0.08);
+}
+
+html { background: var(--cs-bg); }
+body {
+  background: var(--cs-bg);
+  color: #e5e5e5;
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(66, 184, 131, 0.35); }
+
+/* Bara de scroll discretă */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+
+/* Conținut Markdown (lecții, enunțuri, mesaje tutore) */
+.markdown { line-height: 1.75; }
+.markdown h2 {
+  font-size: 1.25rem; font-weight: 700; color: #fff;
+  margin: 1.75rem 0 0.75rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--cs-border);
+}
+.markdown h2:first-child { margin-top: 0; }
+.markdown h3 { font-size: 1.05rem; font-weight: 600; color: #fff; margin: 1.25rem 0 0.5rem; }
+.markdown p { margin: 0.65rem 0; color: #d4d4d4; }
+.markdown ul, .markdown ol { margin: 0.65rem 0 0.65rem 1.25rem; color: #d4d4d4; }
+.markdown ul { list-style: disc; }
+.markdown ol { list-style: decimal; }
+.markdown li { margin: 0.3rem 0; }
+.markdown strong { color: #fff; }
+.markdown a { color: var(--cs-accent); text-decoration: underline; }
+.markdown code {
+  background: #1d1d1d; border: 1px solid var(--cs-border);
+  padding: 0.1rem 0.35rem; border-radius: 0.35rem;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  font-size: 0.85em; color: #7ee0b0;
+}
+.markdown pre {
+  background: #0f0f0f; border: 1px solid var(--cs-border);
+  border-radius: 0.75rem; padding: 1rem; margin: 0.9rem 0;
+  overflow-x: auto;
+}
+.markdown pre code {
+  background: transparent; border: none; padding: 0;
+  color: #e5e5e5; font-size: 0.875rem; line-height: 1.6;
+}
+.markdown table {
+  border-collapse: collapse; margin: 0.9rem 0; width: 100%;
+  font-size: 0.9rem;
+}
+.markdown th, .markdown td {
+  border: 1px solid var(--cs-border); padding: 0.45rem 0.75rem; text-align: left;
+}
+.markdown th { background: #161616; color: #fff; }
+.markdown blockquote {
+  border-left: 3px solid var(--cs-accent); padding-left: 1rem;
+  color: #a3a3a3; margin: 0.9rem 0;
+}
+
+/* Editorul CodeMirror */
+.cm-wrapper .cm-editor { max-height: 460px; font-size: 0.875rem; }
+.cm-wrapper .cm-scroller { font-family: "JetBrains Mono", "Fira Code", Consolas, monospace; }
+.cm-wrapper .cm-editor.cm-focused { outline: none; }
+
+/* Tranziții de pagină */
+.fade-enter-active, .fade-leave-active { transition: opacity 0.15s ease; }
+.fade-enter-from, .fade-leave-to { opacity: 0; }
